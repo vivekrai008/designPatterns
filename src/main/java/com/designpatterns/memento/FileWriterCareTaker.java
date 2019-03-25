@@ -1,4 +1,4 @@
-package com.designpatterns.momento;
+package com.designpatterns.memento;
 
 /**
  * Created by rai.vivek on 25/03/19.

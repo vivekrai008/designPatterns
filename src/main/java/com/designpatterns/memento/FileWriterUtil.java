@@ -1,4 +1,4 @@
-package com.designpatterns.momento;
+package com.designpatterns.memento;
 
 /**
  * Created by rai.vivek on 25/03/19.
@@ -25,23 +25,23 @@ public class FileWriterUtil {
         content.append(str);
     }
 
-    public Momento save() {
-        return new Momento(this.fileName, this.content);
+    public Memento save() {
+        return new Memento(this.fileName, this.content);
     }
 
     public void undoToLastSave(Object obj) {
-        Momento momento = (Momento)obj;
+        Memento momento = (Memento)obj;
         this.fileName = momento.fileName;
         this.content = momento.content;
 
     }
 
-    private class Momento {
+    private class Memento {
 
         private String fileName;
         private StringBuilder content;
 
-        public Momento(String fileName, StringBuilder content) {
+        public Memento(String fileName, StringBuilder content) {
             this.fileName = fileName;
             this.content = new StringBuilder(content);
         }
